@@ -1,16 +1,18 @@
-# AI Requirements → SOW/Diagram Generator — Native Backend (PYTHON)
+# AI SOW / Diagram Generator
 
-This repo provides a **language-native backend** on port **5106**, with minimal **web** and **mobile** clients and a tiny **SDK**.
+**Stack:** Python (FastAPI)  
+**API:** http://127.0.0.1:5106  
+**Web:** http://localhost:5506
 
-## Run
-See `api/README.md` for language-specific steps, then:
-- Web: open `web/index.html` via a static server
-- Mobile: `cd mobile && npm install && npm run start` (Android emulator uses `10.0.2.2:5106`)
+## Run (local)
 
-## Endpoints
-Project-specific routes are implemented in the backend (see `api/`). Try typical paths like:
-- `/api/kpis`, `/api/opps`, `/api/notes`
-- `/api/devices`, `/api/heartbeats`
-- `/api/resources`, `/api/availability`, `/api/book`
-- `/api/payments/create`, `/api/webhooks`
-- `/api/ingest`, `/api/dash/summary`
+### API
+cd ai-sow-diagram-generator-native/api && python3 -m venv .venv && source .venv/bin/activate && pip install -U fastapi 'uvicorn[standard]' && uvicorn main:app --host 127.0.0.1 --port 5106 --reload
+
+### Web (static tester)
+cd ai-sow-diagram-generator-native/web && python3 -m http.server 5506
+
+## Test
+- **Ping:** curl -s http://127.0.0.1:5106 | jq .
+- **Root:** GET /\n- **Plan:** POST /api/plan
+
