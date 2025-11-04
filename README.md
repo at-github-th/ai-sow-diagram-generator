@@ -1,18 +1,20 @@
 # AI SOW / Diagram Generator
 
-**Stack:** Python (FastAPI)  
-**API:** http://127.0.0.1:5106  
-**Web:** http://localhost:5506
+Language: Python (FastAPI)
 
-## Run (local)
+## How to run
 
-### API
+API
+```bash
 cd ai-sow-diagram-generator-native/api && python3 -m venv .venv && source .venv/bin/activate && pip install -U fastapi 'uvicorn[standard]' && uvicorn main:app --host 127.0.0.1 --port 5106 --reload
+```
 
-### Web (static tester)
+Web
+```bash
 cd ai-sow-diagram-generator-native/web && python3 -m http.server 5506
+```
 
-## Test
-- **Ping:** curl -s http://127.0.0.1:5106 | jq .
-- **Root:** GET /\n- **Plan:** POST /api/plan
+Open http://localhost:5506
 
+## Endpoints
+- Root: GET /\n- Plan: POST /api/plan
